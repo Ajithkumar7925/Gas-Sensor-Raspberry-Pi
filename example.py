@@ -1,11 +1,5 @@
 from mq import *
 import sys, time
-try:
-    from urllib.request import urlopen
-except:
-    from urllib2 import urlopen
-myAPI = '3CUMOGTM5V2JA2CL'
-baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
 
 try:
     print("Press CTRL+C to abort.")
@@ -18,8 +12,6 @@ try:
         sys.stdout.write("LPG: %g ppm, CO: %g ppm, Smoke: %g ppm" % (perc["GAS_LPG"], perc["CO"], perc["SMOKE"]))
         sys.stdout.flush()
         time.sleep(0.1)
-        conn = urlopen(baseURL + '&field1=%f' % (MQ))
-        conn.close()
         
 
 except:
