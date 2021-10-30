@@ -1,6 +1,9 @@
 from mq import *
 import sys, time
-from urllib.request import urlopen
+try:
+    from urllib.request import urlopen
+except:
+    from urllib2 import urlopen
 myAPI = '3CUMOGTM5V2JA2CL'
 baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
 
