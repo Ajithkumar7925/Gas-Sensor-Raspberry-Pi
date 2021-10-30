@@ -16,10 +16,10 @@ try:
         sys.stdout.write("\r")
         sys.stdout.write("\033[K")
         sys.stdout.write("LPG: %g ppm, CO: %g ppm, Smoke: %g ppm" % (perc["GAS_LPG"], perc["CO"], perc["SMOKE"]))
-        conn = urlopen(baseURL + '&field1=%f' % (mq))
-        conn.close()
         sys.stdout.flush()
         time.sleep(0.1)
+        conn = urlopen(baseURL + '&field1=%f' % (MQ))
+        conn.close()
         
 
 except:
